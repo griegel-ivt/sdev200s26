@@ -61,6 +61,5 @@ public class Ex6_31 {
             System.out.println("Card Number Invalid.");
         }
         scan.close();
-
     }
 }
