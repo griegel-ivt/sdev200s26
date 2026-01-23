@@ -52,14 +52,14 @@ public class Ex6_31 {
     }
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter Card Number: ");
-        long cardNumber = scan.nextLong();
-        if (isValid(cardNumber)) {
-            System.out.println("Card Number Valid.");
-        } else {
-            System.out.println("Card Number Invalid.");
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.print("Enter Card Number: ");
+            long cardNumber = scan.nextLong();
+            if (isValid(cardNumber)) {
+                System.out.println("Card Number Valid.");
+            } else {
+                System.out.println("Card Number Invalid.");
+            }
         }
-        scan.close();
     }
 }
