@@ -5,17 +5,12 @@ import java.util.*;
 
 public class Ex21_3 {
     public static void main(String[] args) throws Exception {  
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a Java source file: ");
-        String filename = input.nextLine();
-
-        File file = new File(filename);
+        File file = new File(args[0]);
         if (file.exists()) {
-            System.out.println("The number of keywords in " + filename 
-            + " is " + countKeywords(file));
+            System.out.println("The number of keywords in the program is " + countKeywords(file));
         }
         else {
-            System.out.println("File " + filename + " does not exist");
+            System.out.println("File does not exist");
         }    
     }
 
@@ -72,7 +67,7 @@ public class Ex21_3 {
                 inComment = false;
                 continue;
             }
-            
+
             if (!inString && !inComment) {
                 if (Character.isLetter(c)) {
                     currentWord += c;
